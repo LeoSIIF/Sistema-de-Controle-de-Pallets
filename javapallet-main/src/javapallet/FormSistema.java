@@ -71,6 +71,11 @@ public class FormSistema extends javax.swing.JFrame {
         txtProduto.setBackground(new java.awt.Color(204, 153, 255));
         txtProduto.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         txtProduto.setBorder(javax.swing.BorderFactory.createTitledBorder("Produto"));
+        txtProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProdutoActionPerformed(evt);
+            }
+        });
 
         txtQtd.setBackground(new java.awt.Color(204, 153, 255));
         txtQtd.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
@@ -217,7 +222,7 @@ public class FormSistema extends javax.swing.JFrame {
               }
               //se for < = decrementa do p.getQtd a quantidade da caixa de texto
               // e devolve - push(p)
-              else if(Integer.parseInt(txtQtd.getText()) <= p.getQtd()) {
+              else if(Integer.parseInt(txtQtd.getText()) < p.getQtd()) {
                   p.setQtd(p.getQtd() - Integer.parseInt(txtQtd.getText()));// a quantidade ja contida anteriormente menos a quantidade cadastrada que o usuario digitar 
               }
               JOptionPane.showMessageDialog(null, "Encontrado");
@@ -237,6 +242,10 @@ public class FormSistema extends javax.swing.JFrame {
                 mostra();
         }
     }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void txtProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProdutoActionPerformed
 
     /**
      * @param args the command line arguments
